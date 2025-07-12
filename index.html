@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <!--Landing Page-->
+        <!--Header debe estar pegado a la parte superior-->
+        <header style="position: fixed; top: 0; width: 100%;">
+            <div style="background-color:rgb(104, 195, 241); padding: 10px; text-align: center;">
+                <h1 style="color:white; font-family: sans-serif;">LibroFácil</h1>
+                <!--Lista horizontal de opciones: Home, Nosotros, Catálogo y Novedades-->
+                <nav>
+                    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center;">
+                        <li style="margin-right: 80px;"><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+                        <li style="margin-right: 80px;"><a href="#" style="color: white; text-decoration: none;">Nosotros</a></li>
+                        <li style="margin-right: 80px;"><a href="#" style="color: white; text-decoration: none;">Catálogo</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Novedades</a></li>
+                    </ul>
+                </nav>
+
+                <!--Imagen de perfil de usuario estándar cuando aún no inicia sesión o no creó una cuenta-->
+                <!--Debe estar ubicada en el extremo superior derecho del header-->
+                <div style="position: absolute; right: 20px; top: 10px; text-align: center; justify-content:center;">
+                    <img src="img/user-profile.png" style="width: 40px; height: 40px; border-radius: 50%; cursor:pointer;" alt="Perfil de Usuario">
+                    <br>
+                    <a href="iniciar-sesion.html" style="color: white; text-decoration: none; font-family:sans-serif;" id="nombreUsuario">
+                        
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!--Div que contenga imágenes que se sucedan como carrusel, y pasan una a una mediante clic-->
+        <div style="margin-top: 60px; text-align: center;">
+            <img src="img/imagen1.jpeg" alt="Imagen 1" style="width: 100%; max-width: 800px; height: auto;">
+            <img src="img/imagen2.jpg" alt="Imagen 2" style="width: 100%; max-width: 800px; height: auto;">
+            <img src="img/imagen3.jpg" alt="Imagen 3" style="width: 100%; max-width: 800px; height: auto;">
+        </div>
+
+        <script src="js/nombre-usuario.js"></script>
+    </body>
+</html>

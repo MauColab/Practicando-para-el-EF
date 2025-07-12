@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <!--Portal para crear cuenta-->
+        <header style="position: fixed; top: 0; width: 100%;">
+            <div style="background-color:rgb(104, 195, 241); padding: 10px; text-align: center;">
+                <h1 style="color:white; font-family: sans-serif;">LibroFácil</h1>
+                <!--Lista horizontal de opciones: Home, Nosotros, Catálogo y Novedades-->
+                <nav>
+                    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center;">
+                        <li style="margin-right: 80px;"><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+                        <li style="margin-right: 80px;"><a href="#" style="color: white; text-decoration: none;">Nosotros</a></li>
+                        <li style="margin-right: 80px;"><a href="#" style="color: white; text-decoration: none;">Catálogo</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Novedades</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!--Que aparezca debajo-->
+        <!--Crear cuenta: formulario-->
+        <div class="form-container" style="margin-top: 180px; text-align: center; padding: 20px;">
+            <form action="#" method="post">
+                <h2 style="color: black; font-weight:bold;">Crear cuenta</h2>
+                <h5 style="padding-bottom:6px;">Cree una cuenta para poder registrarse</h5>
+                <!--Campos de formulario: Nombre de usuario, Correo Electrónico y Contraseña-->
+
+                <label for="nombre" style="color: black; margin-top:4px;">Nombre de usuario:</label>
+                <input type="text" id="nombre" name="nombre" placeholder ="Ingrese su nombre" required>
+                <br>
+                <label for="correo" style="color: black;">Correo Electrónico:</label>
+                <input type="correo" id="correo" name="correo" placeholder ="Ingrese su correo" required>
+                <br>
+                <label for="password" style="color: black;">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+                <br>
+                <button type="submit" style="font-weight:bold;">Crear cuenta</button>
+            </form>
+        </div>
+
+        <script src="js/login-cc.js"></script>
+    </body>
+</html>
