@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Control de Presupuesto</title>
+    </head>
+    <body>
+        <h1>Control de Presupuesto</h1>
+        <form id ="movementForm">
+            <input type="text" id="description" placeholder="Descripcion" required>
+            <input type="number" id="amount" placeholder="Monto" required>
+            <select id="type">
+                <option value="Ingreso">Ingreso</option>
+                <option value="Gastos">Gastos</option>
+            </select>
+            <button type="submit">Agregar</button>
+            <p id="error"></p>
+        </form>
+
+        <label>Filtrar</label>
+        <select id="filterType">
+            <option value="Todos">Todos</option>
+            <option value="Ingreso">Ingreso</option>
+            <option value="Gastos">Gastos</option>
+        </select>
+
+        <ul id="movementList"></ul>
+
+        <div>
+            <p>Ingreso: S/ <span id="totalIngresos">0.00</span></p>
+            <p>Gastos: S/ <span id="totalGastos">0.00</span></p>
+            <p>Balance: S/ <span id="totalBalance">0.00</span></p>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

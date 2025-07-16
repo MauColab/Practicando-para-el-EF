@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Buscar</title>
+    </head>
+    <body>
+        <h3>Buscar</h3>
+        <br>
+        <input type="text" id="autor2" placeholder="Autor">
+        <br>
+        <button id="botonFiltrar" style="margin-top:8px;" onclick="filtrar()">
+            Filtrar
+        </button>
+        <button id="limpiarFiltro" onclick="mostrarOriginal()">
+            Limpiar filtro
+        </button>
+
+        <div id="mostrarTodo"></div>
+
+        <script src="js/bd.js"></script>
+        <script src="jsnuevo/buscar.js"></script>
+    </body>
+</html>

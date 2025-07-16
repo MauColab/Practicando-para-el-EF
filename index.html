@@ -26,7 +26,8 @@
                 <!--Imagen de perfil de usuario estándar cuando aún no inicia sesión o no creó una cuenta-->
                 <!--Debe estar ubicada en el extremo superior derecho del header-->
                 <div style="position: absolute; right: 20px; top: 10px; text-align: center; justify-content:center;">
-                    <img src="img/user-profile.png" style="width: 40px; height: 40px; border-radius: 50%; cursor:pointer;" alt="Perfil de Usuario">
+                    <img src="img/user-profile.png" style="width: 40px; height: 40px; border-radius: 50%; cursor:pointer;" 
+                    alt="Perfil de Usuario" onclick="mostrarOpciones()">
                     <br>
                     <a href="iniciar-sesion.html" style="color: white; text-decoration: none; font-family:sans-serif;" id="nombreUsuario">
                         
@@ -42,6 +43,74 @@
             <img src="img/imagen3.jpg" alt="Imagen 3" style="width: 100%; max-width: 800px; height: auto;">
         </div>
 
+        <!--Botón de Cerrar sesión-->
+        <!--div style="text-align: center; margin-top: 20px;">
+            <button onclick="cerrarSesion()" style="background-color: #f44336; color: white; 
+            border: none; border-radius: 5px; cursor: pointer; width:150px;">
+                Cerrar Sesión
+            </button>
+        </div-->
+        <!--Cuando el usuario presiona la imagen estándar de perfil, aparece un recuadro con la opción de Cerrar sesión-->
+        <div id="abajoInfo" class="perfil-popup">
+            Bienvenido,
+            <h5 id="nombreBienvenida"></h5>
+            <div style="display:flex; align-items: center; cursor: pointer;">
+                <img src="img/cerrar-sesion.webp" style="width:30px; height:auto;" onclick="cerrarSesion()">
+                <p onclick="cerrarSesion()">Cerrar sesión</p>
+            </div>
+        </div>
+        <!--Cuando el usuario presiona la imagen estándar de perfil y no ha iniciado sesión, aparece un mensaje Inicie sesión-->
+        <div id="abajoSesion" class="perfil-popup">
+            <h3>Si desea ver más información inicie sesión</h3>
+            <a href="iniciar-sesion.html" style="color: blue; text-decoration: none;">Iniciar sesión</a>
+        </div>
+
         <script src="js/nombre-usuario.js"></script>
+        <script>
+            function mostrarOpciones(){
+                // Si el usuario ha iniciado sesión, mostrar el div con id "abajoInfo"
+                const usuarioData = localStorage.getItem('usuarioActual');
+                const infoDiv = document.getElementById('abajoInfo');
+                const sesionDiv = document.getElementById('abajoSesion');
+
+                const infoVisible = infoDiv.classList.contains('mostrar');
+                const sesionVisible = sesionDiv.classList.contains('mostrar');
+
+                if (infoVisible || sesionVisible){
+                    infoDiv.classList.remove('mostrar');
+                    sesionDiv.classList.remove('mostrar');
+                    return;
+                }
+
+                if (usuarioData) {
+                    const usuario = JSON.parse(usuarioData);
+                    document.getElementById('nombreBienvenida').textContent = usuario.nombre; 
+                    infoDiv.classList.add('mostrar');
+                    sesionDiv.classList.remove('mostrar');
+                } else {
+                    sesionDiv.classList.add('mostrar');
+                    infoDiv.classList.remove('mostrar');
+                }
+            }
+
+            // Cerrar si hace clic fuera
+            window.addEventListener('click', function(event) {
+                const abajoInfo = document.getElementById('abajoInfo');
+                const abajoSesion = document.getElementById('abajoSesion');
+                if (!abajoInfo.contains(event.target) && !abajoSesion.contains(event.target)
+            && event.target.tagName !== 'IMG') {
+                    abajoInfo.style.display = 'none';
+                    abajoSesion.style.display = 'none';
+                }
+            });
+        </script>
+
+        <script>
+            // Función para cerrar sesión
+            function cerrarSesion() {
+                localStorage.removeItem('usuarioActual');
+                window.location.href = 'index.html'; // Redirigir a la página de inicio
+            }
+        </script>
     </body>
 </html>

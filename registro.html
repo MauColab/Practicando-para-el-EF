@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro</title>
+    </head>
+    <body>
+        <h3>Formulario de ingreso</h3>
+        <form id="formRegistro">
+            <!--Formulario de registro-->
+            <label>Titulo:<input type="text" placeholder="Titulo de libro" id="titulo" required></label><br>
+            <label>Autor:<input type="text" placeholder="Autor de libro" id="autor" required></label><br>
+            <label>Categoria:
+                <select id="categoria">
+                    <option value="Novela">Novela</option>
+                    <option value="Ensayo">Ensayo</option>
+                    <option value="Historieta">Historieta</option>
+                    <option value="Cuento">Cuento</option>
+                    <option value="Poemario">Poemario</option>
+                </select><br>
+            </label>
+            <label><input type="text" placeholder="Numero de paginas" id="numero" required min="1"></label><br>
+            <label><input type="text" placeholder="Descripcion" id="descripcion" required></label><br>
+
+            <!--Botón de registro-->
+            <br>
+            <button type="submit" style="margin-top:6px;">
+                Registrar
+            </button>
+
+            <button type="chau" onclick="chau()">Ir a la página principal</button>
+
+        </form>
+
+        <p id="mensaje" style="color:green;"></p>
+
+        <script src="js/bd.js"></script>
+        <script src="jsnuevo/buscar.js"></script>
+        <script src="jsnuevo/registro.js"></script>
+    </body>
+</html>
