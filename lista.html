@@ -8,6 +8,23 @@
     <body>
         <h4>Lista</h4>
 
-        
+        <!--Filtros-->
+        <br>
+        <input type="text" id ="filtroListaC" placeholder="Categoria">
+        <br>
+        <input type="text" id ="filtroListaA" placeholder="Autor">
+
+        <button id="botonFiltrar" style="margin-top:8px;" onclick="filtroLista()">
+            Filtrar
+        </button>
+        <button id="limpiarFiltro" onclick="sinFiltro()">
+            Limpiar filtro
+        </button>
+
+        <div id="ListaTotal"></div>
+
+        <script src="js/bd.js"></script>
+        <!--script src="jsnuevo/buscar.js"></script-->
+        <script src="jsnuevo/lista.js"></script>
     </body>
 </html>
